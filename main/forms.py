@@ -7,7 +7,7 @@ from main.models import *
 
 
 class RecordForm(forms.ModelForm):
-    success_url = '/record'
+    success_url = 'home'
     class Meta:
         model = record
-        fields = ['name', 'email', 'number']
+        fields = ['name', 'number', 'email']

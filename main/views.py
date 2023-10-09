@@ -6,8 +6,16 @@ from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import Group
-
-
+from .forms import RecordForm
+from django.contrib import messages
 
 def index(request):
-    return render(request, 'main/index.html')
+    if request.method == 'POST':
+        form = RecordForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Форма успешно заполнена.')
+    else:
+        form = RecordForm()
+
+    return render(request, 'main/index.html', {'form': form})

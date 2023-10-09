@@ -1,5 +1,5 @@
 {% load static %}
-
+{% load crispy_forms_tags %}
 
 <!DOCTYPE HTML>
 <html>
@@ -148,7 +148,7 @@
 							<header>
 								<h3>Удобная запись</h3>
 							</header>
-							<p>Вы можете записаться на консультацию не выходя из дома</p>
+							<p>Вы можете записаться на концультацию не выходя из дома</p>
 						</section>
 
 					</div>
@@ -161,17 +161,24 @@
 		<section id="cta">
 
 			<header>
-				<h2>Запись</h2>
-				<form method="post">
-
-					<button type="submit">Отправить анкету</button>
-				</form>
+				<h2>Запись на концультацию</h2>
+				<div class="container">
+                    <div class="card w-100">
+                        <div class="flex-1 rounded-xl p-12 pb-14 m-5 bg-black bg-opacity-50 tm-item-container">
+                            <form action="" method="post" class="text-lg">
+                                {% csrf_token %}
+                                {{ form|crispy }}
+                                {# {% for f in form %} #}
+                                {# <p><label class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold" for="{{ f.id_for_label }}">{{ f.label }}: </label>{{ f }} </p> #}
+                                {# <div class="form-error">{{ f.errors }}</div> #}
+                                {# {% endfor %} #}
+                                <button class="text-white hover:text-yellow-500 transition" type="submit" id="submit" onclick="clicks();">Выполнить</button>
+                            </form>
+                        </div>
+                    </div>
+                
+                </div>
 			</header>
-			<footer>
-				<form>
-                    
-                </form>
-			</footer>
 
 		</section>
 
@@ -186,14 +193,14 @@
 	</div>
 
 	<!-- Scripts -->
-	<script src={% static 'assets/js/jquery.min.js' %}></script>
-	<script src={% static 'assets/js/jquery.dropotron.min.js' %}></script>
-	<script src={% static 'assets/js/jquery.scrolly.min.js'%}></script>
-	<script src={% static 'assets/js/jquery.scrollex.min.js'%}></script>
-	<script src={% static 'assets/js/browser.min.js'%}></script>
-	<script src={% static 'assets/js/breakpoints.min.js'%}></script>
-	<script src={% static 'assets/js/util.js'%}></script>
-	<script src={% static 'assets/js/main.js'%}></script>
+	<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+	<script src="{% static 'assets/js/jquery.dropotron.min.js' %}"></script>
+	<script src="{% static 'assets/js/jquery.scrolly.min.js'%}"></script>
+	<script src="{% static 'assets/js/jquery.scrollex.min.js'%}"></script>
+	<script src="{% static 'assets/js/browser.min.js'%}"></script>
+	<script src="{% static 'assets/js/breakpoints.min.js'%}"></script>
+	<script src="{% static 'assets/js/util.js'%}"></script>
+	<script src="{% static 'assets/js/main.js'%}"></script>
 
 </body>
 

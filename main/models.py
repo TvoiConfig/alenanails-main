@@ -1,9 +1,9 @@
 from django.db import models
 
 class record(models.Model):
-    name = models.CharField(max_length=150)
-    number = models.CharField(max_length=150)
-    email = models.CharField(max_length=150)
+    name = models.CharField(max_length=150, verbose_name='Имя')
+    number = models.CharField(max_length=150, verbose_name='Номер телефона')
+    email = models.CharField(max_length=150, verbose_name='Электронная почта')
     
     class Meta:
         db_table = 'record'
