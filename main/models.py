@@ -6,6 +6,7 @@ class record(models.Model):
     email = models.CharField(max_length=150, verbose_name='Электронная почта')
     
     class Meta:
+        managed = False
         db_table = 'record'
         verbose_name = 'запись'
         verbose_name_plural = 'Записи'
@@ -19,6 +20,7 @@ class completedrecord(models.Model):
     price = models.IntegerField('Стоимость работы')
 
     class Meta:
+        managed = False
         db_table = 'completedrecord'
         verbose_name = 'Запись'
         verbose_name_plural = 'Записи Выполненые'

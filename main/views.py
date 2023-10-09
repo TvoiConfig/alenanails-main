@@ -14,7 +14,6 @@ def index(request):
         form = RecordForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Форма успешно заполнена.')
     else:
         form = RecordForm()
 
