@@ -1,7 +1,7 @@
 from django.db import models
 
 class record(models.Model):
-    name = models.CharField(max_length=150, verbose_name='Имя')
+    name = models.CharField(max_length=150, verbose_name='ФИО')
     number = models.CharField(max_length=150, verbose_name='Номер телефона')
     email = models.CharField(max_length=150, verbose_name='Электронная почта')
     
